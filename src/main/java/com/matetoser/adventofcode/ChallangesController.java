@@ -28,4 +28,8 @@ public class ChallangesController {
 		return rocketEquation.calculateSumOfFuelRequirements();
 	}
 
+	@GetMapping("/dayone/parttwo")
+	public Integer dayOnePartTwo() {
+		return rocketEquation.calculateSumOfFuelRequirementsPartTwo();
+	}
 }

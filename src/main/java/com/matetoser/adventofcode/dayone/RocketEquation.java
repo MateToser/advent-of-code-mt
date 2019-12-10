@@ -4,12 +4,8 @@
  */
 package com.matetoser.adventofcode.dayone;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +25,21 @@ public class RocketEquation {
 		Integer sumOfFuel = 0;
 		for(String mass : modules){
 			sumOfFuel += fuelCalculation(Integer.valueOf(mass));
+		}
+		return sumOfFuel;
+	}
+
+	public Integer calculateSumOfFuelRequirementsPartTwo(){
+		List<String> modules = getModules();
+		Integer sumOfFuel = 0;
+		for(String mass : modules){
+			Integer fuel = Integer.valueOf(mass);
+			do {
+				fuel = fuelCalculation(fuel);
+				if(fuel > 0){
+					sumOfFuel += fuel;
+				}
+			}while(fuel > 0);
 		}
 		return sumOfFuel;
 	}
