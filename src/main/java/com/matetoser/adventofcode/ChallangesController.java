@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.matetoser.adventofcode.dayone.RocketEquation;
+import com.matetoser.adventofcode.daytwo.ProgramAlarm;
 
 import lombok.RequiredArgsConstructor;
 
@@ -22,6 +23,7 @@ import lombok.RequiredArgsConstructor;
 public class ChallangesController {
 
 	private final RocketEquation rocketEquation;
+	private final ProgramAlarm programAlarm;
 
 	@GetMapping("/dayone")
 	public Integer dayOne() {
@@ -31,5 +33,10 @@ public class ChallangesController {
 	@GetMapping("/dayone/parttwo")
 	public Integer dayOnePartTwo() {
 		return rocketEquation.calculateSumOfFuelRequirementsPartTwo();
+	}
+
+	@GetMapping("/daytwo")
+	public Integer dayTwo() {
+		return programAlarm.restoreGravity();
 	}
 }
