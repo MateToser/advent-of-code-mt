@@ -31,6 +31,28 @@ public class ProgramAlarm {
 		return input[0];
 	}
 
+	public Integer gravityAssist(){
+		int goal = 19690720;
+		int current = 0;
+		int noun = 0;
+		int verb = 0;
+		for(int i = 0; i <= 99; i++){
+			noun = i;
+			for(int j = 0; j <= 99; j++){
+				int[] input = getInput();
+				verb = j;
+				input[1] = noun;
+				input[2] = verb;
+				modifyInput(input);
+				current = input[0];
+				if(goal == current){
+					return 100 * noun + verb;
+				}
+			}
+		}
+		return 100 * noun + verb;
+	}
+
 	private void modifyInput(int[] input){
 		for(int i = 0; i < input.length; i = i + 4){
 			if(input[i] == FINISH){

@@ -39,4 +39,9 @@ public class ChallangesController {
 	public Integer dayTwo() {
 		return programAlarm.restoreGravity();
 	}
+
+	@GetMapping("/daytwo/parttwo")
+	public Integer dayTwoPartTwo() {
+		return programAlarm.gravityAssist();
+	}
 }
