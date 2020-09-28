@@ -1,7 +1,3 @@
-/*
- * Copyright © ShiwaForce.com Zrt. 2012 - 2019.
- * All rights reserved.
- */
 package com.matetoser.adventofcode.daytwo;
 
 import java.io.File;
